@@ -1,6 +1,6 @@
 document.querySelector("#inputs #price").addEventListener('keyup',getInatallment)
-document.querySelector("#inputs #Down Payment").addEventListener('keyup',getInatallment)
-document.querySelector("#inputs #Installment Duration").addEventListener('change',getInatallment)
+document.querySelector("#inputs #DownPayment").addEventListener('keyup',getInatallment)
+document.querySelector("#inputs #InstallmentDuration").addEventListener('change',getInatallment)
 
 function getInatallment(){
     var price=document.querySelector('#price').value
@@ -8,7 +8,7 @@ function getInatallment(){
     var installmentDuration=document.querySelector('#InstallmentDuration').value
     
 
-    var remainingValue = parseFloat(price) - parseFloat(payment) 
+    var remainingValue = parseFloat(price) - parseFloat(downPayment) 
     var interestRate=0
     if(installmentDuration==1){
         interestRate=0.1
@@ -37,35 +37,10 @@ function getInatallment(){
     var months = installmentDuration * 12
     var monthlyInstallment  = totalInstallements / months
 
-    document.querySelector('#inputs #interestValue').innerText="Interest Value="+interestValue.toFixed(2) 
-    document.querySelector('#monthlyInstallment').innerText="Monthly Installment="+interestValue.toFixed(2) 
+    document.querySelector('#interestValue').innerText="Interest Value="+interestValue.toFixed(2) 
+    document.querySelector('#monthlyInstallment').innerText="Monthly Installment="+monthlyInstallment.toFixed(2) 
     
 
 }
 
 
-
-
-/* 
-/* User Inputs
-Car Price = 1.000.000
-Down Payment = 350.000
-Years = 1
-
-/* Calculations
-Remaining Value = Car Price - Down Payment 
-1 Year =>  Interest Rate = 0.1
-2 Years =>  Interest Rate = 0.18
-3 Years =>  Interest Rate = 0.29
-4 Years =>  Interest Rate = 0.38
-5 Years =>  Interest Rate = 0.49
-7 Years =>  Interest Rate = 0.79
-Interest Value = Remaining Value * Interest Rate
-Total Installements = Remaining Value + Interest Value
-Months = Years * 12
-Monthly Installment  = Total Installements / Months
-
-/* Output
-Monthly Installment
-
-*/
