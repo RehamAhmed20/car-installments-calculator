@@ -1,44 +1,44 @@
 document.querySelector("#inputs #price").addEventListener('keyup',getInatallment)
 document.querySelector("#inputs #Down Payment").addEventListener('keyup',getInatallment)
-document.querySelector("#inputs #Installment Duration").addEventListener('keyup',getInatallment)
+document.querySelector("#inputs #Installment Duration").addEventListener('change',getInatallment)
 
 function getInatallment(){
     var price=document.querySelector('#price').value
-    var downPayment=document.querySelector('#Down Payment').value
-    var installmentDuration=document.querySelector('#Installment Duration').value
+    var downPayment=document.querySelector('#DownPayment').value
+    var installmentDuration=document.querySelector('#InstallmentDuration').value
     
 
-    var remainingValue = parseFloat(Price) - parseFloat(Payment) 
+    var remainingValue = parseFloat(price) - parseFloat(payment) 
     var interestRate=0
     if(installmentDuration==1){
-        var interestRate=0.1
+        interestRate=0.1
     }
     else if(installmentDuration==2){
-        var interestRate=0.18
+        interestRate=0.18
     }
     else if(installmentDuration==3){
-        var interestRate=0.29
+        interestRate=0.29
     }
     else if(installmentDuration==4){
-        var interestRate=0.38
+        interestRate=0.38
     }
     else if(installmentDuration==5){
-        var interestRate=0.49
+        interestRate=0.49
     }
     else if(installmentDuration==6){
-        var interestRate=0.64
+        interestRate=0.64
     }
     else if(installmentDuration==7){
-        var interestRate=0.79
+        interestRate=0.79
     }
     var interestValue = parseFloat(remainingValue) * parseFloat(interestRate)
-    var totalInstallements = remainingValue + interestValue
+    var totalInstallements = parseFloat(remainingValue) + parseFloat(interestValue)
 
-    var months = Years * 12
+    var months = installmentDuration * 12
     var monthlyInstallment  = totalInstallements / months
 
-    document.querySelector('#interestValue h1').inn
-    document.querySelector('#monthlyInstallment')
+    document.querySelector('#inputs #interestValue').innerText="Interest Value="+interestValue.toFixed(2) 
+    document.querySelector('#monthlyInstallment').innerText="Monthly Installment="+interestValue.toFixed(2) 
     
 
 }
