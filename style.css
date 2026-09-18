@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    font-weight: 600;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4)),
+        url("car.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+#inputs{
+    width: 400px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    
+}
+#outputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.input {
+    margin: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}

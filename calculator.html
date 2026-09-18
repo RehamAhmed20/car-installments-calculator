@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Car Installments Calculator</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    
     <div id="inputs">
-      <label for="type">Car Type</label>
+      <div class="input">
+        <label for="type">Car Type</label>
       <select name="car type" id="type">
         <option value="#"></option>
         <option value="BMW">BMW</option>
@@ -15,16 +18,24 @@
         <option value="Toyota">Toyota</option>
         <option value="Hyundai">Hyundai</option>
       </select>
-      <label for="model">Car Model</label>
+      </div>
+      <div class="input">
+        <label for="model">Car Model</label>
       <input type="text" id="model" name="car model" />
 
-      <label for="price">Car Price</label>
+      </div>
+      <div class="input">
+        <label for="price">Car Price</label>
       <input type="number" id="price" name="car price" />
 
-      <label for="DownPayment">Down Payment</label>
+      </div>
+      <div class="input">
+        <label for="DownPayment">Down Payment</label>
       <input type="number" id="DownPayment" name="Down Payment" />
 
-      <label for="InstallmentDuration">Installment Duration</label>
+      </div>
+      <div class="input" >
+        <label for="InstallmentDuration">Installment Duration</label>
       <select name="Installment Duration" id="InstallmentDuration">
         <option value="#"></option>
         <option value="1">1</option>
@@ -35,9 +46,12 @@
         <option value="6">6</option>
         <option value="7">7</option>
       </select>
+      </div>
     </div>
-    <h1 id="interestValue">Interest Value</h1>
+    <div id="outputs">
+          <h1 id="interestValue">Interest Value</h1>
     <h1 id="monthlyInstallment">Monthly Installment</h1>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
